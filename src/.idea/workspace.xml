@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="12b7f914-2c0e-4d4e-a306-74ff9ebcd8d3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.1\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1noUK8w87s0sXv34cfBosBBBsbn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="RunManager">
+    <configuration name="PharmacyStoreManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.PharmacyStoreManagement" />
+      <module name="Pharmacy Store Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PharmacyStoreManagement" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="12b7f914-2c0e-4d4e-a306-74ff9ebcd8d3" name="Default Changelist" comment="" />
+      <created>1612055872370</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612055872370</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="27" key="#com.intellij.codeInsight.i18n.I18nizeQuickFixDialog_Form" timestamp="1612059465236">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="27" key="#com.intellij.codeInsight.i18n.I18nizeQuickFixDialog_Form/0.0.1366.728@0.0.1366.728" timestamp="1612059465236" />
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1612090942218">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1612090942218" />
+    <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1612055902060">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1612055902060" />
+    <state x="498" y="76" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1612057525625">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="498" y="76" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1612057525625" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1612425916811">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1612425916811" />
+    <state width="1367" height="154" key="GridCell.Tab.0.bottom" timestamp="1612406401181">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="154" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612406401181" />
+    <state width="1367" height="154" key="GridCell.Tab.0.center" timestamp="1612406401181">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="154" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612406401181" />
+    <state width="1367" height="154" key="GridCell.Tab.0.left" timestamp="1612406401181">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="154" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612406401181" />
+    <state width="1367" height="154" key="GridCell.Tab.0.right" timestamp="1612406401181">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1367" height="154" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612406401181" />
+    <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1612057661215">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="499" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1612057661215" />
+    <state x="478" y="111" key="refactoring.ChangeSignatureDialog" timestamp="1612058491839">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="478" y="111" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1612058491839" />
+  </component>
+</project>
