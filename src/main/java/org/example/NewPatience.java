@@ -2,79 +2,94 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.print.PrinterException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+
 
 public class NewPatience {
+
+
     public NewPatience(){
 
-        JFrame newFrame = new JFrame();
-        newFrame.setSize(750,500);
-        newFrame.setTitle("Add New Patience");
-        newFrame.setResizable(false);
-        newFrame.setIconImage(new ImageIcon("src/main/java/org/example/icon.png").getImage());
-
-        JPanel panel = new JPanel();
+        final JFrame f1 = new JFrame();
+        f1.setSize(750,500);
+        f1.setTitle("Add New Patience");
+        f1.setResizable(false);
+        f1.setIconImage(new ImageIcon("src/main/java/org/example/icon.png").getImage());
+        final JPanel panel = new JPanel();
         panel.setBackground(Color.lightGray);
 
 
-        JLabel FirstNameLabel = new JLabel("Patient's First Name: ");
-        JTextField FirstNameTextField = new JTextField(15);
+        final JLabel FirstNameLabel = new JLabel("Patient's First Name: ");
+        final JTextField FirstNameTextField = new JTextField(15);
 
-        JLabel MiddleNameLabel = new JLabel("Patient's Middle Name: ");
-        JTextField MiddleNameTextField = new JTextField(15);
+        final JLabel MiddleNameLabel = new JLabel("Patient's Middle Name: ");
+        final JTextField MiddleNameTextField = new JTextField(15);
 
-        JLabel LastNameLabel = new JLabel("Patient's Last Name: ");
-        JTextField LastNameTextField = new JTextField(15);
+        final JLabel LastNameLabel = new JLabel("Patient's Last Name: ");
+        final JTextField LastNameTextField = new JTextField(15);
 
-        JLabel SuffixLabel = new JLabel("Suffix: ");
-        JTextField SuffixTextField = new JTextField(6);
+        final JLabel SuffixLabel = new JLabel("Suffix: ");
+        final JTextField SuffixTextField = new JTextField(6);
 
-        JLabel DOBLable = new JLabel("DOB: ");
-        JTextField DOBTextField = new JFormattedTextField("MM/DD/YYYY");
+        final JLabel DOBLable = new JLabel("DOB: ");
+        final JTextField DOBTextField = new JFormattedTextField("MM/DD/YYYY");
 
-        JLabel GenderLabel = new JLabel("Gender: ");
-        JCheckBox MaleBox = new JCheckBox("Male");
-        JCheckBox FemaleBox = new JCheckBox("Female");
-
-        JLabel AddressLabel1 = new JLabel("Patient's Address: ");
-        JTextField AddressTextField = new JTextField(30);
-        JLabel AddressLabel2 = new JLabel("Street Address2 (Optional): ");
-        JTextField Address2TextField = new JTextField(30);
-
-        JLabel CityLabel = new JLabel("City: ");
-        JTextField CityTextField = new JTextField(25);
-
-        JLabel StateLabel = new JLabel("State: ");
-        JTextField StateTextField = new JTextField(4);
-
-        JLabel ZipLabel = new JLabel("Zip: ");
-        JTextField ZipTextField = new JTextField(6);
-
-        JLabel PhoneNumberLabel = new JLabel("Patient's Phone Number: ");
-        JTextField PhoneNumberTextField = new JTextField(20);
-
-        JLabel AllergiesLable = new JLabel("Patient's Allergies: ");
-        JTextField AllergiesTextField = new JTextField(30);
-
-        JLabel MedicationNameLabel = new JLabel("Medicines Name: ");
-        JTextField MedicationNameTextField = new JTextField(15);
-
-        JLabel MedicationReasonsLabel = new JLabel("Medicines Reason Of Taking:");
-        JTextField MedicationReasonsTextField = new JTextField(15);
-
-        JLabel MedicationFrequencyLabel = new JLabel("Times of taking: ");
-        JTextField MedicationFrequencyTextField = new JTextField(15);
-
-        JLabel PhysicianNameLable  = new JLabel("Physician's Name: ");
-        JTextField PhysicianNameTextField = new JTextField(30);
-
-        JLabel PhysicianPhoneNumberLable  = new JLabel("Physician's Phone Number: ");
-        JTextField PhysicianPhoneNumberTextField = new JTextField(20);
-
-        JLabel DateCreatingLable = new JLabel("Date of Creating This Form: ");
-        JTextField DateCreatingTextField = new JFormattedTextField("MM/DD/YYYY");
+        final JLabel GenderLabel = new JLabel("Gender: ");
+        final JRadioButton MaleBox = new JRadioButton("Male");
+        final JRadioButton FemaleBox = new JRadioButton("Female");
+        MaleBox.setActionCommand("MALE");
+        FemaleBox.setActionCommand("FEMALE");
+        final ButtonGroup group = new ButtonGroup();
+        group.add(MaleBox);
+        group.add(FemaleBox);
 
 
+        final JLabel AddressLabel1 = new JLabel("Patient's Address: ");
+        final JTextField AddressTextField = new JTextField(30);
+        final JLabel AddressLabel2 = new JLabel("Street Address2 (Optional): ");
+        final JTextField Address2TextField = new JTextField(30);
 
+        final JLabel CityLabel = new JLabel("City: ");
+        final JTextField CityTextField = new JTextField(25);
+
+        final JLabel StateLabel = new JLabel("State: ");
+        final JTextField StateTextField = new JTextField(4);
+
+        final JLabel ZipLabel = new JLabel("Zip: ");
+        final JTextField ZipTextField = new JTextField(6);
+
+        final JLabel PhoneNumberLabel = new JLabel("Patient's Phone Number: ");
+        final JTextField PhoneNumberTextField = new JTextField(20);
+
+        final JLabel AllergiesLable = new JLabel("Patient's Allergies: ");
+        final JTextField AllergiesTextField = new JTextField(30);
+
+        final JLabel MedicationNameLabel = new JLabel("Medicines Name: ");
+        final JTextField MedicationNameTextField = new JTextField(15);
+
+        final JLabel MedicationReasonsLabel = new JLabel("Medicines Reason Of Taking:");
+        final JTextField MedicationReasonsTextField = new JTextField(15);
+
+        final JLabel MedicationFrequencyLabel = new JLabel("Times of taking: ");
+        final JTextField MedicationFrequencyTextField = new JTextField(15);
+
+        final JLabel PhysicianNameLable  = new JLabel("Physician's Name: ");
+        final JTextField PhysicianNameTextField = new JTextField(30);
+
+        final JLabel PhysicianPhoneNumberLable  = new JLabel("Physician's Phone Number: ");
+        final JTextField PhysicianPhoneNumberTextField = new JTextField(20);
 
 
         panel.add(FirstNameLabel);
@@ -114,11 +129,137 @@ public class NewPatience {
         panel.add(PhysicianNameTextField);
         panel.add(PhysicianPhoneNumberLable);
         panel.add(PhysicianPhoneNumberTextField);
-        panel.add(DateCreatingLable);
-        panel.add(DateCreatingTextField);
 
-        newFrame.getContentPane().add(panel);
-        newFrame.setVisible(true);
+        //** Creating buttons for 1st frame(f1).
 
+        JButton AddToRecordButton = new JButton("Add to Records");
+        panel.add(AddToRecordButton);
+        JButton PrintButton = new JButton("Print Registration Form");
+        panel.add(PrintButton);
+        JButton ClearButton = new JButton("Reset Fields");
+        panel.add(ClearButton);
+        JButton F1_CloseButton = new JButton("Close");
+        panel.add(F1_CloseButton);
+
+        // ** (AddToRecordButton) action listener **
+
+        AddToRecordButton.addActionListener(new ActionListener() {
+            @Override
+
+            public void actionPerformed(ActionEvent e) {
+
+                FileWriter fw = null;
+                try {
+                    fw = new FileWriter("C:\\Users\\musta\\Desktop\\records.txt");
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+                PrintWriter pw = new PrintWriter(fw);
+
+                pw.println(FirstNameTextField.getText());       //*** Add other fields here... ***
+
+                pw.close();
+                JOptionPane.showMessageDialog(null,"Successfully added");
+            }
+
+        });
+
+        // ** (PrintButton) action listener **
+
+        PrintButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                Calendar cal = Calendar.getInstance();
+                final JFrame f2 = new JFrame();
+                f2.setTitle("Prescription Form");
+                f2.setSize(850,750);
+                f2.setResizable(false);
+                f2.setIconImage(new ImageIcon("src/main/java/org/example/icon.png").getImage());
+                f2.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+
+                final JTextArea a = new JTextArea();
+                a.append("\t\t Prescription Form \n\n" +
+                        "\n=========================================================\n" +
+                        "First Name:\t\t\t" + FirstNameTextField.getText() + "\n\n" +
+                        "Middle Name:\t\t\t" + MiddleNameTextField.getText() + "\n\n" +
+                        "Last Name:\t\t\t" + LastNameTextField.getText() + "\n\n" +
+                        "Suffix:\t\t\t" + SuffixTextField.getText() + "\n\n" +
+                        "Date of Birth:\t\t\t" + DOBTextField.getText() + "\n\n" +
+                        "Gender:\t\t\t\t" + group.getSelection().getActionCommand() + "\n\n" +
+
+                        //*** Add other fields here... ***
+
+                        "\n**********************************************************\n" +
+                        "Current Date:\t\t\t\t" + dateFormat.format(cal.getTime()) + "\n\n");
+
+
+                // ** (Internal print & exit buttons) action listener **
+
+                JButton F2_print = new JButton("Print Form");
+                JButton F2_CloseButton = new JButton("Close");
+                F2_print.setBounds(100,600,95,25);
+                F2_CloseButton.setBounds(300,600,95,25);
+                f2.add(F2_print);
+                f2.add(F2_CloseButton);
+
+                F2_print.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                        try {
+                            a.print(); }
+                         catch (PrinterException printerException) {
+                            Logger.getLogger(GuiForm.class.getName()).log(Level.SEVERE,null,printerException);
+                        }
+
+                    }
+                });
+
+                F2_CloseButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (JOptionPane.showConfirmDialog(f2, "Do you want to exit this window?", "Confirm",
+                                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+                            f2.dispose();
+                        }
+                    }
+                });
+
+                f2.add(a);
+                f2.setVisible(true);
+
+            }
+        });
+
+        // **  (ClearButton) action listener **
+
+        ClearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FirstNameTextField.setText("");
+                MiddleNameTextField.setText("");
+                LastNameTextField.setText("");
+                SuffixTextField.setText("");
+                DOBTextField.setText("");
+            }
+        });
+
+        // **  (F1_CloseButton) action listener **
+
+        F1_CloseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (JOptionPane.showConfirmDialog(f1, "Do you want to exit this window?", "Confirm",
+                        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+                    f1.dispose();
+                }
+            }
+        });
+
+
+        f1.getContentPane().add(panel);
+        f1.setVisible(true);
     }
 }
