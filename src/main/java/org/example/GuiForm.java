@@ -4,6 +4,7 @@ package org.example;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,28 +39,90 @@ public class GuiForm extends JFrame {
         newPatientButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                NewPatience MyNewPatience = new NewPatience();
+                NewPatient MyNewPatient = new NewPatient();
             }
         });
 
 
-        // prescriptionFormButton.addActionListener(new ActionListener() {
-        //     @Override
-        //      public void actionPerformed(ActionEvent e) {
-        //        PrescriptionForm MyPrescriptionForm = new PrescriptionForm();
+     //   recordsButton.addActionListener(new ActionListener() {
+       //     @Override
+         //   public void actionPerformed(ActionEvent e) {
+
+        //    }
+       // });
 
 
-        //       }
-        //  });
+        inStockButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                final Object[][] rowData = {
+                        {"", "",""},
+                        {"", "",""},
+                        {"", "",""},
+                        {"", "",""},
+                        {"", "",""},
+                        {"", "",""},
+                        {"", "",""},
+                        {"", "",""},
+                        {"", "",""}
+                };
+
+                Object[] columnNames = {"ID", "MEDICATION","QUANTITY"};
+
+                final JTable table;
+                final DefaultTableModel model;
+                model = new DefaultTableModel(rowData, columnNames);
+                table = new JTable();
+                table.setModel(model);
 
 
-        //recordsButton.addActionListener(new ActionListener() {
-        //  @Override
-        //  public void actionPerformed(ActionEvent e) {
-        //   Record MyRecord = new Record();
+                JButton add = new JButton("Add");
+                JButton remove = new JButton("Remove");
+                JButton CloseButton = new JButton("Close");
 
-        //  }
-        //  });
 
+                add.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent ae) {
+                        model.addRow(rowData[0]);
+                    }
+                });
+                remove.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent ae) {
+
+                        int[] rows = table.getSelectedRows();
+                        for(int i=0; i < rows.length; i++){
+                            model.removeRow(rows[i]- i);
+                        }
+                    }
+                });
+
+                final JFrame f = new JFrame();
+                f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                Container c = f.getContentPane();
+                c.setLayout(new BorderLayout());
+
+                CloseButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                    f.dispose();
+                    }
+                });
+
+                JPanel subPanel = new JPanel();
+                subPanel.add(add);
+                subPanel.add(remove);
+                subPanel.add(CloseButton);
+
+                c.add(subPanel, BorderLayout.SOUTH);
+                c.add(subPanel, BorderLayout.SOUTH);
+                c.add(new JScrollPane(table), BorderLayout.CENTER);
+
+                f.pack();
+                f.setLocationRelativeTo(null);
+                f.setVisible(true);
+
+            }
+        });
     }
 }
+
