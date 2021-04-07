@@ -17,14 +17,14 @@ import java.util.logging.Logger;
 
 
 
-public class NewPatient {
+public class NewPatience {
 
 
-    public NewPatient(){
+    public NewPatience(){
 
         final JFrame f1 = new JFrame();
         f1.setSize(750,500);
-        f1.setTitle("Add New Patient");
+        f1.setTitle("Add New Patience");
         f1.setResizable(false);
         f1.setIconImage(new ImageIcon("src/main/java/org/example/icon.png").getImage());
         final JPanel panel = new JPanel();
