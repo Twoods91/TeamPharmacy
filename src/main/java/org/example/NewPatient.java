@@ -150,13 +150,30 @@ public class NewPatient {
 
                 FileWriter fw = null;
                 try {
-                    fw = new FileWriter("C:\\Users\\musta\\Desktop\\records.txt");
+                    fw = new FileWriter("C:\\Users\\Huda\\Desktop\\records\\record.txt");
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
                 PrintWriter pw = new PrintWriter(fw);
 
-                pw.println(FirstNameTextField.getText());       //*** Add other fields here... ***
+                pw.println(FirstNameTextField.getText());
+                pw.println(MiddleNameTextField.getText());
+                pw.println(LastNameTextField.getText());
+                pw.println(SuffixTextField.getText());
+                pw.println(DOBTextField.getText());
+                pw.println(group.getSelection().getActionCommand());
+                pw.println(AddressTextField.getText());
+                pw.println(Address2TextField.getText());
+                pw.println(CityTextField.getText());
+                pw.println(StateTextField.getText());
+                pw.println(ZipTextField.getText());
+                pw.println(PhoneNumberTextField.getText());
+                pw.println(AllergiesTextField.getText());
+                pw.println(MedicationNameTextField.getText());
+                pw.println(MedicationFrequencyTextField.getText());
+                pw.println(MedicationReasonsTextField.getText());
+                pw.println(PhysicianNameTextField.getText());
+                pw.println(PhysicianPhoneNumberTextField.getText());
 
                 pw.close();
                 JOptionPane.showMessageDialog(null,"Successfully added");

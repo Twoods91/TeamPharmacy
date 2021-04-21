@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Pharmacy Store Management" />
-        <module name="src" />
         <module name="TeamPharmacy" />
+        <module name="TeamPharmacy-2" />
+        <module name="src" />
       </profile>
     </annotationProcessing>
   </component>
