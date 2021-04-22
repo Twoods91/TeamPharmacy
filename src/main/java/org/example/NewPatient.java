@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -136,7 +137,7 @@ public class NewPatient {
         panel.add(AddToRecordButton);
         JButton PrintButton = new JButton("Print Registration Form");
         panel.add(PrintButton);
-        JButton ClearButton = new JButton("Reset Fields");
+        final JButton ClearButton = new JButton("Reset Fields");
         panel.add(ClearButton);
         JButton F1_CloseButton = new JButton("Close");
         panel.add(F1_CloseButton);
@@ -149,17 +150,38 @@ public class NewPatient {
             public void actionPerformed(ActionEvent e) {
 
                 FileWriter fw = null;
+                String recordName = LastNameTextField.getText();
                 try {
-                    fw = new FileWriter("C:\\Users\\musta\\Desktop\\records.txt");
+                    fw = new FileWriter("src/main/java/org/example/Records/"+recordName);
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
                 PrintWriter pw = new PrintWriter(fw);
 
-                pw.println(FirstNameTextField.getText());       //*** Add other fields here... ***
+                pw.println(FirstNameTextField.getText().toUpperCase().trim());
+                pw.println(MiddleNameTextField.getText().toLowerCase(Locale.ROOT).trim());
+                pw.println(LastNameTextField.getText().toUpperCase().trim());
+                pw.println(SuffixTextField.getText().toUpperCase().trim());
+                pw.println(DOBTextField.getText().toUpperCase().trim());
+                pw.println(group.getSelection().getActionCommand().toUpperCase().trim());
+                pw.println(AddressTextField.getText().toUpperCase().trim());
+                pw.println(Address2TextField.getText().toUpperCase().trim());
+                pw.println(CityTextField.getText().toUpperCase().trim());
+                pw.println(StateTextField.getText().toUpperCase().trim());
+                pw.println(ZipTextField.getText().toUpperCase().trim());
+                pw.println(PhoneNumberTextField.getText().toUpperCase().trim());
+                pw.println(AllergiesTextField.getText().toUpperCase().trim());
+                pw.println(MedicationNameTextField.getText().toUpperCase().trim());
+                pw.println(MedicationFrequencyTextField.getText().toUpperCase().trim());
+                pw.println(MedicationReasonsTextField.getText().toUpperCase().trim());
+                pw.println(PhysicianNameTextField.getText().toUpperCase().trim());
+                pw.println(PhysicianPhoneNumberTextField.getText().toUpperCase().trim());
+
 
                 pw.close();
+
                 JOptionPane.showMessageDialog(null,"Successfully added");
+
             }
 
         });
@@ -187,8 +209,21 @@ public class NewPatient {
                         "Suffix:\t\t\t" + SuffixTextField.getText() + "\n\n" +
                         "Date of Birth:\t\t\t" + DOBTextField.getText() + "\n\n" +
                         "Gender:\t\t\t\t" + group.getSelection().getActionCommand() + "\n\n" +
+                        "Patient's Address:\t\t\t\t" +AddressTextField.getText()+ "\n\n" +
+                        "Street Address2(Optional):\t\t\t\t" +Address2TextField.getText()+ "\n\n" +
+                        "City:\t\t\t\t" +CityTextField.getText()+ "\n\n" +
+                        "State:\t\t\t\t" +StateTextField.getText()+ "\n\n" +
+                        "Zipcode:\t\t\t\t" + ZipTextField.getText()+ "\n\n" +
+                        "Patient's Address:\t\t\t\t" +Address2TextField.getText()+ "\n\n" +
+                        "Patient's Phone Number:\t\t\t\t" +PhoneNumberTextField.getText()+ "\n\n" +
+                        "Patient's Allergies:\t\t\t\t" +AllergiesTextField.getText()+ "\n\n" +
+                        "Medication Name:\t\t\t\t" +MedicationNameTextField.getText()+ "\n\n" +
+                        "Times of Taking:\t\t\t\t" +MedicationFrequencyTextField.getText()+ "\n\n" +
+                        "Medication Reason of Taking:\t\t\t\t" +MedicationReasonsTextField.getText()+ "\n\n" +
+                        "Physician's Name:\t\t\t\t" +PhysicianNameTextField.getText()+ "\n\n" +
+                        "Physician's Phone Number :\t\t\t\t" +PhysicianPhoneNumberTextField.getText()+ "\n\n" +
 
-                        //*** Add other fields here... ***
+
 
                         "\n**********************************************************\n" +
                         "Current Date:\t\t\t\t" + dateFormat.format(cal.getTime()) + "\n\n");
@@ -242,6 +277,22 @@ public class NewPatient {
                 LastNameTextField.setText("");
                 SuffixTextField.setText("");
                 DOBTextField.setText("");
+                group.clearSelection();
+                AddressTextField.setText("");
+                Address2TextField.setText("");
+                CityTextField.setText("");
+                StateTextField.setText("");
+                ZipTextField.setText("");
+                PhoneNumberTextField.setText("");
+                AllergiesTextField.setText("");
+                MedicationNameTextField.setText("");
+                MedicationFrequencyTextField.setText("");
+                MedicationReasonsTextField.setText("");
+                PhysicianNameTextField.setText("");
+                PhoneNumberTextField.setText("");
+
+
+
             }
         });
 
